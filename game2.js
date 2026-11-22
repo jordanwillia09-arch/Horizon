@@ -3,6 +3,7 @@
 // Scoring rewards relative accuracy: exact = 200; twice the true value = 100;
 // an error equal to or greater than the true value = 0.
 
+startBtn.addEventListener("click", startGame);
 const questions = [
   {
     category: "SPACE & SCIENCE",
