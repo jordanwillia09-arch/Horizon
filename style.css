@@ -1,0 +1,224 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #0a0a12;
+  color: #e0e0ff;
+  font-family: 'Press Start 2P', monospace;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.screen {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 20px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Stars background */
+.stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(1px 1px at 20px 30px, #fff, transparent),
+    radial-gradient(1px 1px at 40px 70px, rgba(255,255,255,0.8), transparent),
+    radial-gradient(1px 1px at 50px 160px, #fff, transparent),
+    radial-gradient(1px 1px at 90px 40px, rgba(255,255,255,0.6), transparent),
+    radial-gradient(1px 1px at 130px 80px, #fff, transparent),
+    radial-gradient(1.5px 1.5px at 160px 120px, rgba(200,200,255,0.9), transparent);
+  background-size: 200px 200px;
+  animation: drift 120s linear infinite;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+@keyframes drift {
+  from { background-position: 0 0; }
+  to { background-position: 200px 200px; }
+}
+
+.content {
+  text-align: center;
+  z-index: 2;
+  max-width: 500px;
+}
+
+.title {
+  font-size: 2.8rem;
+  letter-spacing: 8px;
+  margin-bottom: 20px;
+  color: #a0c4ff;
+  text-shadow: 0 0 20px rgba(100, 150, 255, 0.5);
+}
+
+.tagline {
+  font-size: 0.7rem;
+  line-height: 1.8;
+  margin-bottom: 30px;
+  color: #8899cc;
+}
+
+.dive-number {
+  font-size: 0.65rem;
+  margin-bottom: 40px;
+  color: #6677aa;
+}
+
+.main-btn {
+  background: #1a1a2e;
+  color: #a0c4ff;
+  border: 2px solid #4a6fa5;
+  padding: 16px 32px;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  letter-spacing: 2px;
+}
+
+.main-btn:hover {
+  background: #2a2a4e;
+  border-color: #7aa2d0;
+  box-shadow: 0 0 15px rgba(100, 150, 255, 0.3);
+}
+
+.hint {
+  margin-top: 25px;
+  font-size: 0.55rem;
+  color: #556688;
+}
+
+/* Game Screen */
+.top-bar {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30px;
+  font-size: 0.6rem;
+  z-index: 10;
+}
+
+.progress-visual {
+  height: 80px;
+  width: 100%;
+  max-width: 400px;
+  position: relative;
+  margin: 40px 0 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.earth {
+  position: absolute;
+  left: 10%;
+  font-size: 0.6rem;
+  color: #4a7c59;
+}
+
+.ship {
+  position: absolute;
+  left: 10%;
+  font-size: 1.2rem;
+  color: #a0c4ff;
+  transition: left 0.8s ease-out;
+}
+
+.space-line {
+  position: absolute;
+  top: 50%;
+  left: 15%;
+  right: 10%;
+  height: 2px;
+  background: linear-gradient(to right, #4a7c59, #1a1a2e 30%, #0a0a12);
+}
+
+.prompt-area {
+  text-align: center;
+  z-index: 2;
+  width: 100%;
+  max-width: 480px;
+}
+
+.prompt-number {
+  font-size: 0.55rem;
+  color: #6677aa;
+  margin-bottom: 15px;
+}
+
+.prompt-text {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  min-height: 60px;
+  color: #c0d0ff;
+}
+
+.timer {
+  font-size: 1.4rem;
+  color: #ff9f43;
+  margin-bottom: 25px;
+}
+
+#answer-input {
+  width: 100%;
+  max-width: 360px;
+  padding: 14px 16px;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.65rem;
+  background: #12121f;
+  border: 2px solid #3a4a6b;
+  color: #e0e0ff;
+  text-align: center;
+  margin-bottom: 20px;
+  outline: none;
+}
+
+#answer-input:focus {
+  border-color: #6a8fc5;
+}
+
+.feedback {
+  margin-top: 20px;
+  font-size: 0.6rem;
+  min-height: 40px;
+  line-height: 1.6;
+}
+
+.feedback.correct {
+  color: #7dcea0;
+}
+
+.feedback.wrong {
+  color: #e74c3c;
+}
+
+/* Results */
+.final-score, .final-points {
+  font-size: 0.8rem;
+  margin: 15px 0;
+}
+
+#exoplanets-found {
+  margin: 25px 0;
+  font-size: 0.6rem;
+  line-height: 1.8;
+  color: #8899cc;
+}
