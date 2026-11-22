@@ -1,1 +1,69 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Horizon — Closest Wins</title>
+  <link rel="stylesheet" href="game2.css">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+  <main class="page-shell">
+    <header class="topline">
+      <a class="back-link" href="index.html">← HORIZON</a>
+      <div class="game-label">DAILY GAME 02</div>
+    </header>
+
+    <section id="intro-screen" class="panel intro-panel">
+      <div class="eyebrow">ESTIMATION CHALLENGE</div>
+      <h1>CLOSEST<br>WINS</h1>
+      <p class="subtitle">You don't need to know the exact answer.<br>You just need to get close.</p>
+      <div class="rules">
+        <div><span>05</span><small>QUESTIONS</small></div>
+        <div><span>200</span><small>PTS EACH</small></div>
+        <div><span>1000</span><small>PTS MAX</small></div>
+      </div>
+      <p class="howto">Enter your best numerical estimate for each question. The closer you are to the real answer, the more points you earn.</p>
+      <button id="start-btn" class="primary-btn">START ESTIMATING</button>
+    </section>
+
+    <section id="game-screen" class="panel game-panel hidden">
+      <div class="game-stats">
+        <div>QUESTION <strong><span id="question-number">1</span>/5</strong></div>
+        <div>SCORE <strong><span id="score">0</span>/1000</strong></div>
+      </div>
+      <div class="progress-track"><div id="progress-fill"></div></div>
+      <div class="question-card">
+        <div class="category" id="category">SPACE & SCIENCE</div>
+        <h2 id="question-text">Loading question...</h2>
+        <p class="unit-hint" id="unit-hint"></p>
+        <label for="estimate-input">YOUR ESTIMATE</label>
+        <div class="input-row">
+          <input id="estimate-input" type="number" inputmode="decimal" placeholder="Enter a number" autocomplete="off">
+          <span id="unit-suffix" class="unit-suffix"></span>
+        </div>
+        <button id="submit-btn" class="primary-btn">LOCK IN ESTIMATE</button>
+        <p id="error-message" class="error-message" aria-live="polite"></p>
+      </div>
+      <div id="feedback" class="feedback hidden" aria-live="polite">
+        <div class="feedback-title" id="feedback-title">ESTIMATE LOCKED</div>
+        <p id="feedback-copy"></p>
+        <div class="points-earned" id="points-earned">+0</div>
+        <button id="next-btn" class="primary-btn">NEXT QUESTION</button>
+      </div>
+    </section>
+
+    <section id="results-screen" class="panel results-panel hidden">
+      <div class="eyebrow">DAILY CHALLENGE COMPLETE</div>
+      <h1>MISSION<br>RESULTS</h1>
+      <div class="final-score"><span id="final-score">0</span><small>/ 1000 POINTS</small></div>
+      <p id="result-message" class="subtitle"></p>
+      <div id="answer-review" class="answer-review"></div>
+      <a class="primary-btn return-link" href="index.html">RETURN TO HORIZON</a>
+    </section>
+    <footer>HORIZON // DAILY CURIOSITY, INFINITE POSSIBILITIES</footer>
+  </main>
+  <script src="game2.js"></script>
+</body>
+</html>
