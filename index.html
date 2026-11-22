@@ -6,6 +6,13 @@
   <title>Horizon</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <style>
+    .game-link {
+      display: inline-block;
+      margin-top: 14px;
+      text-decoration: none;
+    }
+  </style>
 </head>
 <body>
   <!-- Homepage / Start Screen -->
@@ -16,6 +23,7 @@
       <p class="tagline">7 prompts. Rarer answers go farther.</p>
       <p class="dive-number">Dive #<span id="dive-number">1</span></p>
       <button id="begin-btn" class="main-btn">BEGIN DESCENT</button>
+      <a href="game2.html" class="main-btn game-link">GAME 2: CLOSEST WINS</a>
       <p class="hint">One dive per day</p>
     </div>
   </div>
@@ -23,7 +31,7 @@
   <!-- Game Screen -->
   <div id="game-screen" class="screen hidden">
     <div class="stars"></div>
-    
+
     <div class="top-bar">
       <div class="depth">Depth: <span id="current-depth">0</span>m</div>
       <div class="score">Score: <span id="current-score">0</span></div>
@@ -39,10 +47,10 @@
       <div class="prompt-number">Prompt <span id="prompt-num">1</span> / 7</div>
       <div class="prompt-text" id="prompt-text">Loading...</div>
       <div class="timer" id="timer">25</div>
-      
+
       <input type="text" id="answer-input" placeholder="Type your answer..." autocomplete="off">
       <button id="submit-btn" class="main-btn">LAUNCH</button>
-      
+
       <div id="feedback" class="feedback"></div>
     </div>
   </div>
